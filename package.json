@@ -1,5 +1,7 @@
-{
-  "homepage": "./",
+{  
+  "homepage": "https://kid-pc-chen.github.io/exam_review_system_v1",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "name": "exam_review_system_v1",
   "version": "0.1.0",
   "private": true,
@@ -13,5 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
