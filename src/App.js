@@ -26,12 +26,14 @@ class ExamReviewer extends React.Component {
   }
 
   handleExamOptionChange(exam_option) {
+    
     this.setState({ keyword: '' });
     this.setState({ exam_option: exam_option });
+    
+    // this.setState({ keyword: '', exam_option: exam_option });
   }
 
-  render() {
-    const self = this;
+  render() {    
     const exam_list = {
       "exam1": exam1,
       "exam2": exam2,
@@ -40,9 +42,9 @@ class ExamReviewer extends React.Component {
 
     return (
         <div>
-            <ExamSelector onChange={self.handleExamOptionChange} />
-            <SearchBox defaultKeyword={self.state.keyword} onChange={self.handleKeyWordChange} />
-            <QuestionsList exam={exam_list[self.state.exam_option]} keyword={self.state.keyword} />
+            <ExamSelector onChange={this.handleExamOptionChange} />
+            <SearchBox defaultKeyword={this.state.keyword} onChange={this.handleKeyWordChange} />
+            <QuestionsList exam={exam_list[this.state.exam_option]} keyword={this.state.keyword} />
         </div>
       );
   }
@@ -86,9 +88,9 @@ class SearchBox extends React.Component {
     return (      
       <div>
           <h1>關鍵字查詢 Keyword search</h1>
-          <input type="text" defaultValue={defaultKeyword} onChange={this.handleTextChange} />
+          <input type="text" value={defaultKeyword} onChange={this.handleTextChange} />
       </div>
-    );
+    );    
   }
 }
 
