@@ -15,7 +15,7 @@ class ExamReviewer extends React.Component {
 
     this.state = {
       keyword: '',
-      exam_option: 'exam1'
+      examOption: 'exam1'
     }
   }
 
@@ -24,13 +24,13 @@ class ExamReviewer extends React.Component {
     // console.log("ExamReviewer keyword: " + keyword);
   }
 
-  handleExamOptionChange (exam_option) {
+  handleExamOptionChange (examOption) {
     this.setState({ keyword: '' })
-    this.setState({ exam_option: exam_option })
+    this.setState({ examOption: examOption })
   }
 
   render () {
-    const exam_list = {
+    const examList = {
       'exam1': exam1,
       'exam2': exam2,
       'exam3': exam3
@@ -40,7 +40,7 @@ class ExamReviewer extends React.Component {
       <div>
         <ExamSelector onChange={this.handleExamOptionChange} />
         <SearchBox defaultKeyword={this.state.keyword} onChange={this.handleKeyWordChange} />
-        <QuestionsList exam={exam_list[this.state.exam_option]} keyword={this.state.keyword} />
+        <QuestionsList exam={examList[this.state.examOption]} keyword={this.state.keyword} />
       </div>
     )
   }
